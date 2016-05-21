@@ -3,8 +3,9 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Test Move Object</title>
+    <title>Task 3 Test Move Object</title>
 <script>
+
   function left() {
             var element = document.getElementById("image1");
             element.style.left = parseInt(element.style.left) - 1 + 'px';
