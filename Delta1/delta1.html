@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>
+Delta first task
+</title>
+<style>
+
+#box1{
+width:300px;
+height:150px;
+background:red;
+}
+#box2{
+width:300px;
+height:150px;
+background:blue;
+}
+</style>
+<script>
+var i=1;
+var j=1;
+function rgbcolor()
+{  
+function color()
+{return Math.floor(Math.random()*256).toString(16)
+}
+return "#"+color()+color()+color();
+}
+function change1()
+{  
+
+j=0;
+
+document.getElementById("box1").style.backgroundColor=document.getElementById("box2").style.backgroundColor;
+return true;
+}
+function change2()
+{   
+i=0;
+
+document.getElementById("box2").style.backgroundColor=document.getElementById("box1").style.backgroundColor;
+return true;
+}
+function changeColor1()
+{ 
+
+if(j==0)
+{j=1;
+return true;
+}
+document.getElementById("box2").style.backgroundColor=rgbcolor();
+setTimeout(function(){ changeColor1()}, 1000);
+return true;
+}
+function changeColor2()
+{
+
+if(i==0)
+{i=1;
+return true;
+}
+document.getElementById("box1").style.backgroundColor=rgbcolor();
+setTimeout(function(){ changeColor2()}, 1000);
+return true;
+}
+</script>
+</head>
+<body>
+<div id="box1" onmouseover="changeColor1();" onmouseout="change1();">
+</div>
+</br>
+<div id="box2" onmouseover="changeColor2();" onmouseout="change2();">
+</div>
+</body>
+</html>
